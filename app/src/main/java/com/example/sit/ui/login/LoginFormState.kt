@@ -1,4 +1,4 @@
-package com.example.sitwithoutlogin.ui.login
+package com.example.sit.ui.login
 
 /**
  * Data validation state of the login form.

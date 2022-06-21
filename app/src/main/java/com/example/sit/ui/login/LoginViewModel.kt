@@ -1,13 +1,13 @@
-package com.example.sitwithoutlogin.ui.login
+package com.example.sit.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
-import com.example.sitwithoutlogin.data.LoginRepository
-import com.example.sitwithoutlogin.data.Result
+import com.example.sit.data.LoginRepository
+import com.example.sit.data.Result
 
-import com.example.sitwithoutlogin.R
+import com.example.sit.R
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 

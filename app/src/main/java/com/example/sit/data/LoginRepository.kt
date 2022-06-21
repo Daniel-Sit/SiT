@@ -1,6 +1,6 @@
-package com.example.sitwithoutlogin.data
+package com.example.sit.data
 
-import com.example.sitwithoutlogin.data.model.LoggedInUser
+import com.example.sit.data.model.LoggedInUser
 
 /**
  * Class that requests authentication and user information from the remote data source and

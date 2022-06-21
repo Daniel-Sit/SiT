@@ -1,4 +1,4 @@
-package com.example.sitwithoutlogin
+package com.example.sit
 
 import org.junit.Test
 

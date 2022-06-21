@@ -1,4 +1,4 @@
-package com.example.sitwithoutlogin.ui.login
+package com.example.sit.ui.login
 
 import android.app.Activity
 import androidx.lifecycle.Observer
@@ -12,9 +12,9 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
-import com.example.sitwithoutlogin.databinding.ActivityLoginBinding
+import com.example.sit.databinding.ActivityLoginBinding
 
-import com.example.sitwithoutlogin.R
+import com.example.sit.R
 
 class LoginActivity : AppCompatActivity() {
 

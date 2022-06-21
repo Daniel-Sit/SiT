@@ -1,4 +1,4 @@
-package com.example.sitwithoutlogin.ui.login
+package com.example.sit.ui.login
 
 /**
  * Authentication result : success (user details) or error message.

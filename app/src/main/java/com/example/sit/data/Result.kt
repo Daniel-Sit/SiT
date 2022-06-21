@@ -1,4 +1,4 @@
-package com.example.sitwithoutlogin.data
+package com.example.sit.data
 
 /**
  * A generic class that holds a value with its loading status.

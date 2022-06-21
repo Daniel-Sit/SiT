@@ -1,6 +1,6 @@
-package com.example.sitwithoutlogin.data
+package com.example.sit.data
 
-import com.example.sitwithoutlogin.data.model.LoggedInUser
+import com.example.sit.data.model.LoggedInUser
 import java.io.IOException
 
 /**

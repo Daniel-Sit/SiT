@@ -1,9 +1,9 @@
-package com.example.sitwithoutlogin.ui.login
+package com.example.sit.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.sitwithoutlogin.data.LoginDataSource
-import com.example.sitwithoutlogin.data.LoginRepository
+import com.example.sit.data.LoginDataSource
+import com.example.sit.data.LoginRepository
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.
