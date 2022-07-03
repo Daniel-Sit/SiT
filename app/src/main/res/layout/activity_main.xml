@@ -6,35 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/home"
-        android:layout_width="205dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="205dp"
-        android:text="@string/home"
-        android:textAllCaps="false"
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background"
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/table"
-        android:layout_width="205dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="205dp"
-        android:text="@string/table"
-        android:textAllCaps="false"
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="206dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="206dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/tubbutton_chairicon" />
+
+    <ImageButton
+        android:id="@+id/table"
+        android:layout_width="206dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="206dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/table"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/tubbutton_tableicon" />
 
     <TextView
         android:id="@+id/homeText01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         android:text="@string/homeText01"
+        android:textColor="#209c05"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,11 +59,65 @@
         android:id="@+id/homeText02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="450dp"
         android:text="@string/homeText02"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/homeText03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="@string/homeText02"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="550dp"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sit"/>
+
+    <ImageView
+        android:id="@+id/longtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="460dp"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shibauracafeteriaseat" />
+
+    <ImageView
+        android:id="@+id/chair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:scaleX="0.87"
+        android:scaleY="0.87"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/greenchair" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

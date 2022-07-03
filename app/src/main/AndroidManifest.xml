@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SiTWithoutLogin"
         tools:targetApi="31">
+
         <activity
             android:name="com.example.sit.ui.login.LoginActivity"
             android:exported="false"

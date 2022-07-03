@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.lifecycle.lifecycleScope
@@ -18,10 +19,6 @@ class ZoneActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zone)
-
-        val text01 = findViewById<TextView>(R.id.sample01)
-        val text02 = findViewById<TextView>(R.id.sample02)
-        val text03 = findViewById<TextView>(R.id.sample03)
 
         suspend fun readBackground():MutableMap<String,String>{
             return withContext(Dispatchers.IO){
@@ -47,27 +44,21 @@ class ZoneActivity : AppCompatActivity() {
             }
         }
 
-        @UiThread
-        fun showBackground(result: MutableMap<String,String>){
-            text01.text = if (result.get("1") == "Occupied") {"×"}else{"〇"}
-            text02.text = if (result.get("2") == "Occupied") {"×"}else{"〇"}
-            text03.text = if (result.get("3") == "Occupied") {"×"}else{"〇"}
-        }
-
+        //@UiThread
         lifecycleScope.launch{
             val result = readBackground()
-            showBackground(result)
+            //showBackground(result)
         }
 
         //Home
-        val home = findViewById<Button>(R.id.home)
+        val home = findViewById<ImageButton>(R.id.home)
         home.setOnClickListener{
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
         }
 
         //Map
-        val map = findViewById<Button>(R.id.map)
+        val map = findViewById<ImageButton>(R.id.map)
         map.setOnClickListener{
             val i = Intent(this, MapActivity::class.java)
             startActivity(i)
@@ -78,7 +69,7 @@ class ZoneActivity : AppCompatActivity() {
         reload.setOnClickListener{
             lifecycleScope.launch{
                 val result = readBackground()
-                showBackground(result)
+                //showBackground(result)
             }
         }
     }

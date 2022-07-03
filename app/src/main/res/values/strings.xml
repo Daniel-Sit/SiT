@@ -17,4 +17,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="reload">Re</string>
+    <string name="title">SiT</string>
+    <string name="king" />
+    <string name="longtitle">Shibaura Cafeteria Seat</string>
 </resources>

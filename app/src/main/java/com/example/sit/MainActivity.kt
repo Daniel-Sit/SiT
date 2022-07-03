@@ -1,9 +1,10 @@
 package com.example.sit
 
 import android.content.Intent
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.annotation.WorkerThread
@@ -48,7 +49,9 @@ class MainActivity : AppCompatActivity() {
 
         @UiThread
         fun showBackground(result: MutableMap<String,String>){
-            text1.text = result.count{it.value == "Vacant"}.toString()+"/"+result.count().toString()
+            val customFont: Typeface = Typeface.createFromAsset(assets, "ArialCEBold.ttf")
+            text1.typeface = customFont
+            text1.text = Math.round(result.count{it.value == "Vacant"}.toDouble()/result.count().toDouble()*100).toString()+"%"
         }
 
         lifecycleScope.launch{
@@ -57,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Table
-        val table = findViewById<Button>(R.id.table)
+        val table = findViewById<ImageButton>(R.id.table)
         table.setOnClickListener {
             val i = Intent(this, ZoneActivity::class.java)
             startActivity(i)
