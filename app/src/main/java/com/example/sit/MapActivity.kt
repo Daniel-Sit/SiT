@@ -64,6 +64,7 @@ class MapActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        /*
         //Reload
         val reload = findViewById<Button>(R.id.reload)
         reload.setOnClickListener{
@@ -72,5 +73,6 @@ class MapActivity : AppCompatActivity() {
                 //showBackground(result)
             }
         }
+        */
     }
 }

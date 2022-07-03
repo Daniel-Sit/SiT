@@ -64,6 +64,7 @@ class ZoneActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        /*
         //Reload
         val reload = findViewById<Button>(R.id.reload)
         reload.setOnClickListener{
@@ -72,5 +73,6 @@ class ZoneActivity : AppCompatActivity() {
                 //showBackground(result)
             }
         }
+       */
     }
 }

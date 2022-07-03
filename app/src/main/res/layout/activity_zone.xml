@@ -15,7 +15,7 @@
         android:layout_marginBottom="345dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/map"
-        android:scaleX="0.95"
+        android:scaleX="0.91"
         android:scaleY="0.95"
         android:text="@string/map"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:layout_marginBottom="345dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/zone"
-        android:scaleX="0.95"
+        android:scaleX="0.91"
         android:scaleY="0.95"
         android:text="@string/zone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,6 +91,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shibauracafeteriaseat" />
 
+    <!--
     <Button
         android:id="@+id/reload"
         android:layout_width="55dp"
@@ -103,13 +104,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+    -->
 
     <ImageView
         android:id="@+id/detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="225dp"
-        android:scaleX="0.95"
+        android:scaleX="0.93"
         android:scaleY="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +136,7 @@
         android:id="@+id/zone02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="335dp"
+        android:layout_marginTop="325dp"
         android:scaleX="0.92"
         android:scaleY="0.75"
         app:layout_constraintBottom_toBottomOf="parent"
