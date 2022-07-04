@@ -20,6 +20,8 @@ class MapActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
+        val map = findViewById<TextView>(R.id.cafeteriamapText)
+
         suspend fun readBackground():MutableMap<String,String>{
             return withContext(Dispatchers.IO){
                 var seatData = mutableMapOf<String,String>("1" to "Occupied","2" to "Occupied","3" to "Occupied")
@@ -44,10 +46,14 @@ class MapActivity : AppCompatActivity() {
             }
         }
 
-        //@UiThread
+        @UiThread
+        fun showBackground(result: MutableMap<String,String>){
+            map.text = result.count{it.value == "Vacant"}.toString()+"/"+result.count().toString()
+        }
+
         lifecycleScope.launch{
             val result = readBackground()
-            //showBackground(result)
+            showBackground(result)
         }
 
         //Home

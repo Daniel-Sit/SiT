@@ -20,9 +20,12 @@ class ZoneActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zone)
 
+        val east = findViewById<TextView>(R.id.eastText)
+        val west = findViewById<TextView>(R.id.westText)
+
         suspend fun readBackground():MutableMap<String,String>{
             return withContext(Dispatchers.IO){
-                var seatData = mutableMapOf<String,String>("1" to "Occupied","2" to "Occupied","3" to "Occupied")
+                var seatData = mutableMapOf<String,String>("1" to "Occupied","2" to "Occupied","3" to "Occupied","4" to "Occupied","5" to "Occupied","6" to "Occupied","7" to "Occupied","8" to "Occupied","9" to "Occupied","10" to "Occupied")
                 val result = StringBuilder()
                 val url = URL("http://10.0.2.2:8000/api/status")
                 val con = url.openConnection() as HttpURLConnection
@@ -44,10 +47,15 @@ class ZoneActivity : AppCompatActivity() {
             }
         }
 
-        //@UiThread
+        @UiThread
+        fun showBackground(result: MutableMap<String,String>){
+            east.text = result.count{it.key.toInt() <= 5 && it.value == "Vacant"}.toString()+"/"+result.count{it.key.toInt() <= 5}.toString()
+            west.text = result.count{it.key.toInt() > 5 && it.value == "Vacant"}.toString()+"/"+result.count{it.key.toInt() > 5}.toString()
+        }
+
         lifecycleScope.launch{
             val result = readBackground()
-            //showBackground(result)
+            showBackground(result)
         }
 
         //Home

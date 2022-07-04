@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         @WorkerThread
         suspend fun readBackground():MutableMap<String,String>{
             return withContext(Dispatchers.IO){
-                var seatData = mutableMapOf<String,String>("1" to "Occupied","2" to "Occupied","3" to "Occupied")
+                var seatData = mutableMapOf<String,String>("1" to "Occupied","2" to "Occupied","3" to "Occupied","4" to "Occupied","5" to "Occupied","6" to "Occupied","7" to "Occupied","8" to "Occupied","9" to "Occupied","10" to "Occupied")
                 val result = StringBuilder()
                 val url = URL("http://10.0.2.2:8000/api/status")
                 val con = url.openConnection() as HttpURLConnection
@@ -49,8 +49,6 @@ class MainActivity : AppCompatActivity() {
 
         @UiThread
         fun showBackground(result: MutableMap<String,String>){
-            val customFont: Typeface = Typeface.createFromAsset(assets, "ArialCEBold.ttf")
-            text1.typeface = customFont
             text1.text = Math.round(result.count{it.value == "Vacant"}.toDouble()/result.count().toDouble()*100).toString()+"%"
         }
 
