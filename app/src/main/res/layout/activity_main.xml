@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tubbutton_chairicon" />
+        app:srcCompat="@drawable/tubbutton_chairicon_home" />
 
     <ImageButton
         android:id="@+id/table"
@@ -40,16 +40,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tubbutton_tableicon" />
+        app:srcCompat="@drawable/tubbutton_tableicon_home" />
 
     <TextView
         android:id="@+id/homeText01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/homeText01"
         android:textColor="#209c05"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

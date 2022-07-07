@@ -70,15 +70,13 @@ class MapActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        /*
         //Reload
-        val reload = findViewById<Button>(R.id.reload)
+        val reload = findViewById<ImageButton>(R.id.reload)
         reload.setOnClickListener{
             lifecycleScope.launch{
                 val result = readBackground()
-                //showBackground(result)
+                showBackground(result)
             }
         }
-        */
     }
 }
