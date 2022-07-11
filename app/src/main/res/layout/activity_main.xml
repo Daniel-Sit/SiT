@@ -49,7 +49,7 @@
         android:layout_marginTop="300dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/homeText01"
-        android:textColor="#209c05"
+        android:textColor="@android:color/transparent"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,17 +108,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shibauracafeteriaseat" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/chair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:scaleX="0.87"
         android:scaleY="0.87"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/greenchair" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

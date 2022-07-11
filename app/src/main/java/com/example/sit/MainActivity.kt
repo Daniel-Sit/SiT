@@ -1,13 +1,13 @@
 package com.example.sit
 
 import android.content.Intent
-import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.annotation.WorkerThread
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import org.json.JSONObject
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val text1 = findViewById<TextView>(R.id.homeText01)
+        val chair = findViewById<ImageButton>(R.id.chair)
 
         @WorkerThread
         suspend fun readBackground():MutableMap<String,String>{
@@ -50,6 +51,17 @@ class MainActivity : AppCompatActivity() {
         @UiThread
         fun showBackground(result: MutableMap<String,String>){
             text1.text = Math.round(result.count{it.value == "Vacant"}.toDouble()/result.count().toDouble()*100).toString()+"%"
+            val percent = Math.round(result.count{it.value == "Vacant"}.toDouble()/result.count().toDouble()*100).toInt()
+            if(percent >= 40){
+                chair.setImageResource(R.drawable.greenchair)
+                text1.setTextColor(Color.rgb(32,156,5))
+            }else if(percent > 0){
+                chair.setImageResource(R.drawable.yellowchair)
+                text1.setTextColor(Color.rgb(235,255,10))
+            }else{
+                chair.setImageResource(R.drawable.redchair)
+                text1.setTextColor(Color.rgb(255,10,10))
+            }
         }
 
         lifecycleScope.launch{
@@ -57,11 +69,20 @@ class MainActivity : AppCompatActivity() {
             showBackground(result)
         }
 
+        //Chair
+        chair.setOnClickListener {
+            lifecycleScope.launch{
+                val result = readBackground()
+                showBackground(result)
+            }
+        }
+
         //Table
         val table = findViewById<ImageButton>(R.id.table)
         table.setOnClickListener {
             val i = Intent(this, ZoneActivity::class.java)
             startActivity(i)
+            finish()
         }
     }
 }
