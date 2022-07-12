@@ -18,6 +18,6 @@ class StartActivity : AppCompatActivity() {
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
             finish()
-        }, 2500)
+        }, 3000)
     }
 }
