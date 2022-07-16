@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.annotation.WorkerThread
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val text1 = findViewById<TextView>(R.id.homeText01)
+        val text = findViewById<ImageView>(R.id.longtext)
         val chair = findViewById<ImageButton>(R.id.chair)
 
         @WorkerThread
@@ -54,13 +56,25 @@ class MainActivity : AppCompatActivity() {
             val percent = Math.round(result.count{it.value == "Vacant"}.toDouble()/result.count().toDouble()*100).toInt()
             if(percent >= 40){
                 chair.setImageResource(R.drawable.greenchair)
+                if((0..1).random() == 0) text.setImageResource(R.drawable.text01)
+                else text.setImageResource(R.drawable.text02)
                 text1.setTextColor(Color.rgb(32,156,5))
+            }else if(percent >= 30) {
+                chair.setImageResource(R.drawable.yellowchair)
+                text1.setTextColor(Color.rgb(235,255,10))
+                text.setImageResource(R.drawable.text03)
+            }else if(percent >= 10){
+                chair.setImageResource(R.drawable.yellowchair)
+                text1.setTextColor(Color.rgb(235,255,10))
+                text.setImageResource(R.drawable.text04)
             }else if(percent > 0){
                 chair.setImageResource(R.drawable.yellowchair)
                 text1.setTextColor(Color.rgb(235,255,10))
+                text.setImageResource(R.drawable.text05)
             }else{
                 chair.setImageResource(R.drawable.redchair)
                 text1.setTextColor(Color.rgb(255,10,10))
+                text.setImageResource(R.drawable.text05)
             }
         }
 
